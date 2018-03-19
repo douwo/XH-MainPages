@@ -1,0 +1,33 @@
+.layui-logo {
+  background: #FF5722;
+  color: #fff !important;
+  font-size: 18px !important; }
+
+.layui-bg-black {
+  background-color: #D65255; }
+
+.layui-nav-item > a > span,
+.layui-header .layui-nav-item a {
+  color: #C86F25;
+  background: transparent !important; }
+
+.layui-header .layui-nav-item a:hover {
+  color: #FFBA81;
+  background-color: rgba(225, 225, 225, 0.5) !important; }
+
+.layui-nav-item a:hover {
+  background: rgba(255, 255, 255, 0.2) !important; }
+
+.layui-nav {
+  background: transparent !important; }
+
+.layui-layout-admin .layui-header {
+  background: #eee;
+  box-sizing: border-box;
+  border-bottom: 3px solid indianred;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
+
+.layui-nav-bar {
+  background-color: #FF9945; }
+
+/*# sourceMappingURL=index.css.map */

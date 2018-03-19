@@ -3,103 +3,98 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>mainPage</title>
 		<link rel="stylesheet" type="text/css" href="css/layui.css" />
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="sass/index.css" />
 	</head>
-	<body>
-		<body class="layui-layout-body">
-			<div class="layui-layout layui-layout-admin">
-				<div class="layui-header">
-					<div class="layui-logo">后台管理系统<sup>V0.0.1</sup></div>
-					<!-- 头部区域（可配合layui已有的水平导航） -->
-					<ul class="layui-nav layui-layout-left">
-					</ul>
-					<ul class="layui-nav layui-layout-right">
-						<li class="layui-nav-item">
-							<a href="javascript:;">
-								<img src="img/users-head.jpg" class="layui-nav-img"> 
-								<span>Admin</span>
-							</a>
+
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header">
+				<div class="layui-logo">后台管理系统<sup>V0.0.1</sup></div>
+				<!-- 头部区域（可配合layui已有的水平导航） -->
+				<ul class="layui-nav layui-layout-left">
+				</ul>
+				<ul class="layui-nav layui-layout-right">
+					<li class="layui-nav-item">
+						<a href="javascript:;">
+							<img src="img/users-head.jpg" class="layui-nav-img">
+							<span>Admin</span>
+						</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="">基本资料</a>
+							</dd>
+							<dd>
+								<a href="">安全设置</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">安全退出&nbsp;<i class="fa fa-power-off"></i></a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="layui-side layui-bg-black">
+				<div class="layui-side-scroll">
+					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+					<ul id="left-nav" class="layui-nav layui-nav-tree" lay-filter="leftNav">
+						<li class="layui-nav-item layui-nav-itemed">
+							<a class="" href="javascript:;">所有商品</a>
 							<dl class="layui-nav-child">
 								<dd>
-									<a href="">基本资料</a>
+									<a href="javascript:;">列表一</a>
 								</dd>
 								<dd>
-									<a href="">安全设置</a>
+									<a href="javascript:;">列表二</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">列表三</a>
+								</dd>
+								<dd>
+									<a href="">超链接</a>
 								</dd>
 							</dl>
 						</li>
-						<li class="layui-nav-item">
-							<a href="">安全退出&nbsp;<i class="fa fa-power-off"></i></a>
-						</li>
 					</ul>
 				</div>
-
-				<div class="layui-side layui-bg-black">
-					<div class="layui-side-scroll">
-						<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-						<ul class="layui-nav layui-nav-tree" lay-filter="test">
-							<li class="layui-nav-item layui-nav-itemed">
-								<a class="" href="javascript:;">所有商品</a>
-								<dl class="layui-nav-child">
-									<dd>
-										<a href="javascript:;">列表一</a>
-									</dd>
-									<dd>
-										<a href="javascript:;">列表二</a>
-									</dd>
-									<dd>
-										<a href="javascript:;">列表三</a>
-									</dd>
-									<dd>
-										<a href="">超链接</a>
-									</dd>
-								</dl>
-							</li>
-							<li class="layui-nav-item">
-								<a href="javascript:;">解决方案</a>
-								<dl class="layui-nav-child">
-									<dd>
-										<a href="javascript:;">列表一</a>
-									</dd>
-									<dd>
-										<a href="javascript:;">列表二</a>
-									</dd>
-									<dd>
-										<a href="">超链接</a>
-									</dd>
-								</dl>
-							</li>
-							<li class="layui-nav-item">
-								<a href="">云市场</a>
-							</li>
-							<li class="layui-nav-item">
-								<a href="">发布商品</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="layui-body">
-					<!-- 内容主体区域 -->
-					<div style="padding: 15px;">内容主体区域</div>
-				</div>
-
-				<div class="layui-footer">
-					<!-- 底部固定区域 -->
-					© layui.com - 底部固定区域
-				</div>
 			</div>
-		</body>
-		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-		<script src="js/layui.all.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			layui.use('element', function() {
-				var element = layui.element;
 
+			<div class="layui-body">
+				<!-- 内容主体区域 -->
+				<div style="padding: 15px;">内容主体区域</div>
+			</div>
+
+			<div class="layui-footer" style="text-align: center;height: ;">
+				<!-- 底部固定区域 -->
+				© xh 2018
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/layui.all.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			var _text = '';
+			$.get("left-nav.json", function(result) {
+				$.each(result.mainTitle, function(index, obj) {
+					_text = _text + '<li class="layui-nav-item"><a class="" href="javascript:;">' +
+						obj.name + '</a><dl class="layui-nav-child">';
+					$.each(result.title, function(index, obj) {
+						_text = _text + '<dd><a href="javascript:;">' + obj.name + '</a></dd>'
+					});
+					_text = _text + '</dl></li>';
+				});
+				$('#left-nav').html(_text);
+				var element = layui.element;
+				element.render('nav');
 			});
-		</script>
+		})
+		layui.use('element', function() {
+			var element = layui.element;
+		});
+	</script>
 
 </html>

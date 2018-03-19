@@ -1,27 +1,37 @@
 $trans:#{transparent !important};
+@mixin linear-gradient($color1,$color2){
+    background: linear-gradient(to right, $color1, $color2);
+}
 .layui-logo{
+    background: #FF5722;
     color: #fff !important;
+    font-size: 18px !important;
 } 
 .layui-bg-black{
-    background: url(../img/left-nav-bg.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
+    background-color: #D65255;
 }
-.layui-nav-item, 
-.layui-nav .layui-nav-item a{
+
+.layui-nav-item>a>span,
+.layui-header .layui-nav-item a{
+    color: #C86F25;
     background: $trans;
 }
+.layui-header .layui-nav-item a:hover{
+    color: #FFBA81;
+    background-color: rgba(225,225,225,.5) !important;
+}
 .layui-nav-item a:hover{
-    background: rgba(255,255,255,0.2) !important
+    background: rgba(255,255,255,0.2) !important;
 }
 .layui-nav{
-    background: $trans
+    background: $trans;
 }
 .layui-layout-admin .layui-header{
-    background: url(../img/top-nav-bg.gif);
-    background-position: top;
-    background-size: cover;
+    background: #eee;
     box-sizing: border-box;
     border-bottom: 3px solid indianred; 
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.layui-nav-bar{
+    background-color: #FF9945;
 }
