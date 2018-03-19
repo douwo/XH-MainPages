@@ -1,0 +1,33 @@
+.layui-logo {
+  color: #fff !important;
+}
+
+.layui-bg-black {
+  background: url(../img/left-nav-bg.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.layui-nav-item,
+.layui-nav .layui-nav-item a {
+  background: transparent !important;
+}
+
+.layui-nav-item a:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.layui-nav {
+  background: transparent !important;
+}
+
+.layui-layout-admin .layui-header {
+  background: url(../img/top-nav-bg.gif);
+  background-position: top;
+  background-size: cover;
+  box-sizing: border-box;
+  border-bottom: 3px solid indianred;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=index.css.map */
