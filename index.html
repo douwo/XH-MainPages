@@ -45,16 +45,13 @@
 							<a class="" href="javascript:;">所有商品</a>
 							<dl class="layui-nav-child">
 								<dd>
-									<a href="javascript:;">列表一</a>
+									<a href="javascript:;" onclick="addTab('demo','111','网站设置')">网站设置</a>
 								</dd>
 								<dd>
-									<a href="javascript:;">列表二</a>
+									<a href="javascript:;" onclick="addTab('demo','222','商品管理')">商品管理</a>
 								</dd>
 								<dd>
-									<a href="javascript:;">列表三</a>
-								</dd>
-								<dd>
-									<a href="">超链接</a>
+									<a href="javascript:;" onclick="addTab('demo','333','订单管理')">订单管理</a>
 								</dd>
 							</dl>
 						</li>
@@ -63,10 +60,17 @@
 			</div>
 
 			<div class="layui-body">
-				<!-- 内容主体区域 -->
-				<div style="padding: 15px;">内容主体区域</div>
+				<div style="padding: 0px;">
+					<div class="layui-tab layui-tab-card" lay-filter="demo" lay-allowClose="true">
+						<ul class="layui-tab-title">
+							<li class="layui-this" lay-id="111" ondblclick="delTab('demo','111')">网站设置</li>
+						</ul>
+						<div class="layui-tab-content">
+							<div class="layui-tab-item layui-show">内容1</div>
+						</div>
+					</div>
+				</div>
 			</div>
-
 			<div class="layui-footer" style="text-align: center;height: ;">
 				<!-- 底部固定区域 -->
 				© xh 2018
@@ -82,19 +86,64 @@
 				$.each(result.mainTitle, function(index, obj) {
 					_text = _text + '<li class="layui-nav-item"><a class="" href="javascript:;">' +
 						obj.name + '</a><dl class="layui-nav-child">';
-					$.each(result.title, function(index, obj) {
-						_text = _text + '<dd><a href="javascript:;">' + obj.name + '</a></dd>'
+					$.each(obj.second, function(index, obj2) {
+						_text = _text + '<dd><a href="javascript:;" onclick="addTab(\'demo\',\'' + obj2.id + '\',\'' + obj2.title + '\')">' + obj2.title + '</a></dd>'
 					});
 					_text = _text + '</dl></li>';
 				});
 				$('#left-nav').html(_text);
 				var element = layui.element;
-				element.render('nav');
+				element.render();
+			});
+			layui.use('element', function() {
+				var element = layui.element;
+				element.on('tab(demo)', function(data) {
+					var _title = $(this).text();
+					var _titleLength = _title.length;
+					_title = _title.substr(0, _titleLength - 1);
+					var _dd = $('#left-nav dd');
+					_dd.each(function() {
+						if(_title == $(this).text()) {
+							_dd.removeClass('layui-this');
+							$(this).addClass('layui-this');
+							return;
+						}
+					})
+				});
+				element.on('tabDelete(demo)', function(data) {
+					var tab_content = $.trim($(".layui-tab-title").text())
+					if(tab_content == ''){
+						$('#left-nav dd').removeClass('layui-this');
+					}
+				});
 			});
 		})
-		layui.use('element', function() {
+
+		function addTab(filter, id, title) {
+			var flag = 0;
 			var element = layui.element;
-		});
+			$('.layui-tab-title>li').each(function() {
+				var _title = $.trim($(this).text());
+				var _titleLength = _title.length;
+				_title = _title.substr(0, _titleLength - 1);
+				if(_title == title) {
+					element.tabChange(filter, id);
+					flag = 1;
+					return false;
+				}
+			});
+			if(flag == 1) {
+				return;
+			} else {
+				element.tabAdd('demo', {
+					title: title,
+					content: '<iframe src="StuPage.html" width="100%" height="100%"></iframe>', //支持传入html
+					id: id
+				});
+				element.tabChange(filter, id);
+			}
+		}
+
 	</script>
 
 </html>

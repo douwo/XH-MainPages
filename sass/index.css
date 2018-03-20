@@ -25,9 +25,21 @@
   background: #eee;
   box-sizing: border-box;
   border-bottom: 3px solid indianred;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 
 .layui-nav-bar {
   background-color: #FF9945; }
+
+.layui-tab.layui-tab-card,
+.layui-body > div {
+  height: 100%;
+  margin: 0px;
+  border: none; }
+
+.layui-tab-title > li {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 /*# sourceMappingURL=index.css.map */
