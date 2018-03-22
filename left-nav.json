@@ -1,44 +1,37 @@
-{
-	"mainTitle": [
-		{
-			"name": "一级目录1",
-			"second": [
-				{
-					"id":"111",
-					"title":"网站设置",
-					"url":"StuPage.html"
-				},
-				{
-					"id":"222",
-					"title":"商品管理",
-					"url":"StuPage.html"
-				},
-				{
-					"id":"333",
-					"title":"订单管理",
-					"url":"StuPage.html"
-				}
-			]
-		},
-		{
-			"name": "一级目录2",
-			"second": [
-				{
-					"id":"444",
-					"title":"二级目录4",
-					"url":"StuPage.html"
-				},
-				{
-					"id":"555",
-					"title":"二级目录5",
-					"url":"StuPage.html"
-				},
-				{
-					"id":"666",
-					"title":"二级目录6",
-					"url":"StuPage.html"
-				}
-			]
-		}
-	]
-}
+[
+	{
+		"name": "一级目录1",
+		"second": [
+			{
+				"id": "111",
+				"title": "网站设置",
+				"url": "StuPage.html"
+			}, {
+				"id": "222",
+				"title": "商品管理",
+				"url": "StuPage.html"
+			}, {
+				"id": "333",
+				"title": "订单管理",
+				"url": "StuPage.html"
+			}
+		]
+	}, {
+		"name": "一级目录2",
+		"second": [
+			{
+				"id": "444",
+				"title": "二级目录4",
+				"url": "StuPage.html"
+			}, {
+				"id": "555",
+				"title": "二级目录5",
+				"url": "StuPage.html"
+			}, {
+				"id": "666",
+				"title": "二级目录6",
+				"url": "StuPage.html"
+			}
+		]
+	}
+]

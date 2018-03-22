@@ -40,6 +40,13 @@
 			<div class="layui-side layui-bg-black">
 				<div class="layui-side-scroll">
 					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+					<li class="layui-nav-item layui-nav-itemed">
+						<ul class="layui-nav layui-nav-tree">
+							<li class="layui-nav-item layui-nav-itemed layui-this" style="text-align: center;">
+								<p style="position: relative;left: -10px;font-size: 16px;font-weight: 800;"><i class="layui-icon" style="font-size: 16px;">&#xe68e;</i>&nbsp;首页</p>
+							</li>
+						</ul>
+					</li>
 					<ul id="left-nav" class="layui-nav layui-nav-tree" lay-filter="leftNav">
 						<li class="layui-nav-item layui-nav-itemed">
 							<a class="" href="javascript:;">所有商品</a>
@@ -63,10 +70,10 @@
 				<div style="padding: 0px;">
 					<div class="layui-tab layui-tab-card" lay-filter="demo" lay-allowClose="true">
 						<ul class="layui-tab-title">
-							<li class="layui-this" lay-id="111" ondblclick="delTab('demo','111')">网站设置</li>
+							<li id="mainPage" class="layui-this">首页</li>
 						</ul>
 						<div class="layui-tab-content">
-							<div class="layui-tab-item layui-show">内容1</div>
+							<div class="layui-tab-item layui-show">首页内容</div>
 						</div>
 					</div>
 				</div>
@@ -80,10 +87,15 @@
 	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/layui.all.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+		window.onload = function(){
+			var _mainPage_tabTitle = document.getElementById("mainPage");
+			var _mainPage_tabTitle_btn = _mainPage_tabTitle.getElementsByTagName("i");
+			_mainPage_tabTitle_btn[0].style.display = "none";
+		}
 		$(function() {
 			var _text = '';
 			$.get("left-nav.json", function(result) {
-				$.each(result.mainTitle, function(index, obj) {
+				$.each(result, function(index, obj) {
 					_text = _text + '<li class="layui-nav-item"><a class="" href="javascript:;">' +
 						obj.name + '</a><dl class="layui-nav-child">';
 					$.each(obj.second, function(index, obj2) {
@@ -112,7 +124,7 @@
 				});
 				element.on('tabDelete(demo)', function(data) {
 					var tab_content = $.trim($(".layui-tab-title").text())
-					if(tab_content == ''){
+					if(tab_content == '') {
 						$('#left-nav dd').removeClass('layui-this');
 					}
 				});
@@ -143,7 +155,6 @@
 				element.tabChange(filter, id);
 			}
 		}
-
 	</script>
 
 </html>
