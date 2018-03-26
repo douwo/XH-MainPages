@@ -1,3 +1,10 @@
+html,
+body,
+iframe {
+  height: 100%;
+  width: 100%;
+  border: none; }
+
 .layui-logo {
   background: #FF5722;
   color: #fff !important;
@@ -41,5 +48,12 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+.layui-tab-content {
+  /*ifrema*/
+  height: calc(100% - 44px);
+  padding: 0; }
+  .layui-tab-content .layui-tab-item {
+    height: 100%; }
 
 /*# sourceMappingURL=index.css.map */

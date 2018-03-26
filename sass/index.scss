@@ -3,6 +3,14 @@ $trans:#{transparent !important};
     background: linear-gradient(to right, $color1, $color2);
 }
 
+html,
+body,
+iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
 .layui-logo {
     background: #FF5722;
     color: #fff !important;
@@ -55,4 +63,13 @@ $trans:#{transparent !important};
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.layui-tab-content {
+    /*ifrema*/
+    height: calc(100% - 44px);
+    padding: 0;
+    .layui-tab-item{
+        height: 100%;
+    }
 }

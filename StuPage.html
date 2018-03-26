@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-		123
-	</body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>其他表格页面</title>
+	<link rel="stylesheet" type="text/css" href="css/layui.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="sass/StuPage.css" />
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/layui.all.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<div class="topTool" style="position:relative">
+		<button class="addBtn-Stu layui-btn layui-btn-normal layui-anim layui-anim-scaleSpring">
+			<i class="layui-icon">&#xe654;</i>&nbsp;新增-学生</button>
+		<button class="addBtn-T layui-btn layui-btn-normal layui-anim layui-anim-scaleSpring">
+			<i class="layui-icon">&#xe654;</i>&nbsp;新增-教师</button>
+
+		<div style="display:inline-block;position: absolute;right:2vw">
+			<div class="layui-input-inline">
+				<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="工号" class="layui-input">
+			</div>
+			<div class="layui-input-inline">
+				<span style="color: #999999">- or - </span>
+			</div>
+			<div class="layui-input-inline">
+				<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="姓名" class="layui-input">
+			</div>
+			<button class="layui-btn layui-btn-normal layui-anim layui-anim-scaleSpring">
+				<i class="layui-icon">&#xe615;</i>&nbsp;查询</button>
+		</div>
+	</div>
+
+
+	<table class="layui-hide" id="test" lay-filter="demo"></table>
+	<script type="text/html" id="barDemo">
+		<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+	</script>
+	<script src="js/StuPage.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
 </html>

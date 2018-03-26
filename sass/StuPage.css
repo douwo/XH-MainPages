@@ -1,0 +1,17 @@
+.layui-table-view {
+	margin: 0;
+}
+
+.topTool {
+	height: 60px;
+	line-height: 60px;
+	padding-left: 20px;
+}
+
+.layui-table-page {
+	top: 2px;
+}
+
+.topTool>button:hover {
+	transform: translateY(-5) !important;
+}
